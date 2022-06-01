@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('student', function (Blueprint $table) {
-            $table->bigIncrements('student_id');
-            $table->string('student_name', 50);
-            $table->integer('grade');
-            $table->string('hometown', 50);
-            $table->integer('major_id');
-            //$table->foreign('major_id')->references('major_id')->on('major');
-
+        Schema::create('food', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('price');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('students');
+        Schema::dropIfExists('food');
     }
 };
